@@ -1,0 +1,30 @@
+.crypto-home{
+  &-nav{
+    height: 100px;
+
+    .material-icons{
+      margin-right: 24px;
+      font-size: 48px;
+    }
+
+    .bg-bars-material-light{
+      background: #546E7A;
+    }
+
+    .items-center{
+      height: 100%;
+    }
+
+    .text-black{
+      color: #ffffff;
+    }
+  }
+
+  ul{
+    margin-bottom: 32px;
+  }
+
+  svg{
+    margin: auto;
+  }
+}

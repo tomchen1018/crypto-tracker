@@ -1,0 +1,14 @@
+.crypto-btn{
+  &-text{
+    position: fixed;
+    width: 100%;
+    padding: 0 0 24px;
+    z-index: 11;
+    background: #fff;
+
+    &.bottom-btn{
+      bottom: 0;
+      padding-top: 24px;
+    }
+  }
+}
