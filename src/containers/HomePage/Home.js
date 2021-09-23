@@ -16,6 +16,7 @@ const Home = () => {
   const [isUpdated, setIsUpdated] = useState(true);
   const { cryptos } = useSelector((state) => state);
   const cryptosData = cryptos.data;
+  const [isInit, setIsInit] = useState(false);
   let isBottomBtn = false;
 
   if (cryptosData) {
@@ -33,13 +34,18 @@ const Home = () => {
       dispatch(getMyCryptos());
     }
 
+    // check cryptos is finish loading
+    if (cryptos.isLoading === false) {
+      setIsInit(true)
+    }
+
     // update data every 2 sec
     const interval = setInterval(() => dispatch(getMyCryptos()), 2000);
 
     return () => {
       clearInterval(interval);
     }
-  }, [dispatch, isUpdated]);
+  }, [dispatch, isUpdated, cryptos]);
 
   return (
     <App safeAreas>
@@ -61,7 +67,7 @@ const Home = () => {
         />
 
         {
-          cryptosData.length ?
+          isInit ?
             <CryptoList list={cryptosData} removeCrypto={handleRemoveEvent} /> :
             <Loader />
         }
