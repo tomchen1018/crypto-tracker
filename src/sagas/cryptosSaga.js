@@ -27,7 +27,10 @@ export function* getMyCryptos() {
       const myWatchList = getMyCryptoService();
 
       let myCryptos = data.filter((coin) => {
-        return myWatchList.includes(coin.slug) || myWatchList.includes(coin.symbol.toLowerCase());
+        const hasSlug = coin.slug && myWatchList.includes(coin.slug);
+        const hasSymbol = coin.symbol && myWatchList.includes(coin.symbol.toLowerCase());
+
+        return hasSlug || hasSymbol;
       });
 
       yield put(crptosActionCreators.getMyCryptosSuccess(myCryptos));
