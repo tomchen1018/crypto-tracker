@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+// For best user experience, please open it in mobile or mobile simulator
+- Add Crypto: click add button
+- delete Crypto: swipe the list item to the left and then click delete
+
 
 ### `npm i`
 
